@@ -13,5 +13,13 @@
       {{node.url}}
     </span>
   </div>
-  <div class='blocks-wrapper' *ngIf="expanded">Blocks go here</div>
+  <div class='blocks-wrapper' *ngIf="expanded">
+      <div *ngIf="!blocks;else blockTemplate"> There are not blocks to show</div>
+      <ng-template #blockTemplate>
+        <div *ngFor="let block of blocks">
+          <p>{{block.attributes.index}}</p>
+          <p>{{block.attributes.data}}</p>
+        </div>
+      </ng-template>
+  </div>
 </div>

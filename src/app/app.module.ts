@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
-
+import { HttpClientModule } from '@angular/common/http';
 import configureStore from '../store/configureStore';
 
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { StatusComponent } from './status/status.component';
   imports: [
     BrowserModule,
     NgReduxModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
