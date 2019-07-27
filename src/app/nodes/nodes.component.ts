@@ -1,25 +1,19 @@
-import { Component, OnInit, EventEmitter} from '@angular/core';
-import { Observable } from 'rxjs';
-import { NgRedux, select } from '@angular-redux/store';
-import { Nodes } from '../../models/nodes.model'
-import { Node } from '../../models/node.model'
-import { NodesActions } from '../../store/nodes';
+import { Component, OnInit } from '@angular/core';
+import { Node } from '../../models/node.model';
+import { NodesStore } from '../services/nodesStore.service';
 
 @Component({
   selector: 'node-list',
   templateUrl: './nodes.component.html',
-  styleUrls: ['./nodes.component.css'],
+  styleUrls: ['./nodes.component.css']
 })
 export class NodesComponent implements OnInit {
-  @select(['nodes', 'list']) readonly nodes$: Observable<Nodes>;
-
   expandedNodeURL: string = null;
 
-  constructor (private ngRedux: NgRedux<any>) {}
+  constructor(public store: NodesStore) {}
 
   ngOnInit() {
-    const nodes = this.ngRedux.getState().nodes.list;
-    nodes.forEach(node => this.ngRedux.dispatch(NodesActions.checkNodeStatus(node)))
+    this.store.getStatus();
   }
 
   onToogleExpand(node: Node): void {
@@ -33,5 +27,4 @@ export class NodesComponent implements OnInit {
   setMessage(message: string): void {
     this.expandedNodeURL = message;
   }
-
 }
