@@ -29,7 +29,12 @@ export class NodesStore extends Store<Node[]> {
           })
         ),
         map(({ node_name }) => {
-          return { name: node_name, online: !!node_name, loading: false };
+          return {
+            ...node,
+            name: node_name,
+            online: !!node_name,
+            loading: false
+          };
         })
       );
     });
