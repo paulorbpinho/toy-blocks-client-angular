@@ -1,9 +1,4 @@
-<div class="wrapper" *ngIf="loading; else loaded">
-  <div class="loading-ellipsis">
-    <div></div>
-    <div></div>
-  </div>
-</div>
+<app-loader *ngIf="loading; else loaded"></app-loader>
 
 <ng-template #loaded>
   <div [ngClass]="{ wrapper: true, success: online, danger: !online }">
