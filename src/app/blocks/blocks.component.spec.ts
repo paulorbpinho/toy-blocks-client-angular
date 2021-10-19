@@ -1,16 +1,29 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 
+import { BlockComponent } from '../block/block.component';
 import { BlocksComponent } from './blocks.component';
 
 describe('BlocksComponent', () => {
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+
   let component: BlocksComponent;
   let fixture: ComponentFixture<BlocksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlocksComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [ BlockComponent, BlocksComponent ]
     })
     .compileComponents();
+
+    httpClient = TestBed.get(HttpClient);
+    httpTestingController = TestBed.get(HttpTestingController);
   }));
 
   beforeEach(() => {
