@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BlocksStoreService } from '../services/blocks-store.service';
 
 @Component({
   selector: 'app-blocks',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlocksComponent implements OnInit {
 
-  constructor() { }
+  constructor(public blocksStore: BlocksStoreService) { }
+
+  @Input() node: Node;
 
   ngOnInit() {
+    this.blocksStore.getBlocks(this.node);
   }
 
 }
