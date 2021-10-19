@@ -10,9 +10,10 @@ import { StatusComponent } from './status/status.component';
 import { LoaderComponent } from './loader/loader.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { BlockComponent } from './block/block.component';
+import { IdentifierPipe } from './pipes/identifier.pipe';
 
 @NgModule({
-  declarations: [AppComponent, NodeComponent, NodesComponent, StatusComponent, LoaderComponent, BlocksComponent, BlockComponent],
+  declarations: [AppComponent, NodeComponent, NodesComponent, StatusComponent, LoaderComponent, BlocksComponent, BlockComponent, IdentifierPipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   bootstrap: [AppComponent]
 })
