@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { Block } from 'src/models/block.model';
+import { Blocks } from 'src/models/blocks.model';
 import { ApiService } from './api.service';
 import { Store } from './store';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlocksStoreService extends Store<Block[]> {
+export class BlocksStoreService extends Store<Blocks> {
 
   constructor(private api: ApiService) {
-    super([]);
+    super({ blocks: null, loading: true });
   }
 
   public getBlocks(node) {
+    this.setState({ blocks: null, loading: true });
     this._getBlocks(node).subscribe(blocks => {
       this.setState(blocks);
     });
@@ -23,10 +24,13 @@ export class BlocksStoreService extends Store<Block[]> {
   private _getBlocks(node) {
     return this.api.get(`${node.url}/api/v1/blocks`).pipe(
       catchError(error =>
-        of([])
+        of({ blocks: null, loading: false })
       ),
       map((response) => {
-        return response.data;
+        return {
+          blocks: response.data,
+          loading: false
+        };
       })
     );
   }
