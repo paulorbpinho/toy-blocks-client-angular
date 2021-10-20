@@ -1,0 +1,7 @@
+<ng-container *ngTemplateOutlet="blocks; context: { list: blocksStore.state$ | async }"></ng-container>
+<ng-template #blocks let-list="list">
+  <app-loader *ngIf="list.loading"></app-loader>
+  <ng-template ngFor let-block [ngForOf]="list.blocks">
+    <app-block [block]="block"></app-block>
+  </ng-template>
+</ng-template>

@@ -5,33 +5,31 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 
-import { NodeComponent } from '../node/node.component';
-import { StatusComponent } from '../status/status.component';
-import { NodesComponent } from './nodes.component';
-import { BlocksComponent } from '../blocks/blocks.component';
-import { LoaderComponent } from '../loader/loader.component';
 import { BlockComponent } from '../block/block.component';
+import { BlocksComponent } from './blocks.component';
 import { IdentifierPipe } from '../pipes/identifier.pipe';
+import { LoaderComponent } from '../loader/loader.component';
 
-describe('NodesComponent', () => {
+describe('BlocksComponent', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
 
-  let component: NodesComponent;
-  let fixture: ComponentFixture<NodesComponent>;
+  let component: BlocksComponent;
+  let fixture: ComponentFixture<BlocksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [NodesComponent, NodeComponent, StatusComponent, BlocksComponent, LoaderComponent, BlockComponent, IdentifierPipe],
-    }).compileComponents();
+      declarations: [ BlockComponent, BlocksComponent, IdentifierPipe, LoaderComponent ]
+    })
+    .compileComponents();
 
     httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NodesComponent);
+    fixture = TestBed.createComponent(BlocksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
