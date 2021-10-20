@@ -13,8 +13,9 @@ export class BlocksComponent implements OnInit {
   @Input() public node: Node;
 
   ngOnInit() {
-    if( this.node )
+    if (this.node) {
       this.blocksStore.getBlocks(this.node);
+    }
   }
 
 }

@@ -13,8 +13,9 @@ import { BlockComponent } from './block/block.component';
 import { IdentifierPipe } from './pipes/identifier.pipe';
 
 @NgModule({
-  declarations: [AppComponent, NodeComponent, NodesComponent, StatusComponent, LoaderComponent, BlocksComponent, BlockComponent, IdentifierPipe],
+  declarations: [AppComponent, NodeComponent, NodesComponent, StatusComponent, LoaderComponent, BlocksComponent,
+    BlockComponent, IdentifierPipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
