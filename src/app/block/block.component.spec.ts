@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IdentifierPipe } from '../pipes/identifier.pipe';
 
 import { BlockComponent } from './block.component';
 
@@ -8,7 +9,7 @@ describe('BlockComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockComponent ]
+      declarations: [ BlockComponent, IdentifierPipe ]
     })
     .compileComponents();
   }));

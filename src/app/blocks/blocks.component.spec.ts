@@ -7,6 +7,8 @@ import {
 
 import { BlockComponent } from '../block/block.component';
 import { BlocksComponent } from './blocks.component';
+import { IdentifierPipe } from '../pipes/identifier.pipe';
+import { LoaderComponent } from '../loader/loader.component';
 
 describe('BlocksComponent', () => {
   let httpClient: HttpClient;
@@ -18,7 +20,7 @@ describe('BlocksComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [ BlockComponent, BlocksComponent ]
+      declarations: [ BlockComponent, BlocksComponent, IdentifierPipe, LoaderComponent ]
     })
     .compileComponents();
 

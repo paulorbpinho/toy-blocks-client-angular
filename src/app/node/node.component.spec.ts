@@ -1,4 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BlockComponent } from '../block/block.component';
+import { BlocksComponent } from '../blocks/blocks.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { IdentifierPipe } from '../pipes/identifier.pipe';
+import { StatusComponent } from '../status/status.component';
 
 import { NodeComponent } from './node.component';
 
@@ -8,7 +13,7 @@ describe('NodeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NodeComponent ]
+      declarations: [ NodeComponent, BlocksComponent, StatusComponent, LoaderComponent, BlockComponent, IdentifierPipe ]
     })
     .compileComponents();
   }));
