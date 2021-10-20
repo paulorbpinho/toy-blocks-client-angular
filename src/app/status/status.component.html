@@ -1,9 +1,9 @@
 <app-loader *ngIf="loading; else loaded"></app-loader>
 
 <ng-template #loaded>
-  <div [ngClass]="{ wrapper: true, success: online, danger: !online }">
+  <div [ngClass]="{ wrapper: true, success: available, danger: !available }">
     <span>
-      {{ online ? 'Online' : 'Offline' }}
+      {{ available ? 'Online' : 'Offline' }}
     </span>
   </div>
 </ng-template>
