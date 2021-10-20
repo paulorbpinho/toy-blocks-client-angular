@@ -10,7 +10,7 @@ export class BlocksComponent implements OnInit {
 
   constructor(public blocksStore: BlocksStoreService) { }
 
-  @Input() node: Node;
+  @Input() public node: Node;
 
   ngOnInit() {
     this.blocksStore.getBlocks(this.node);
