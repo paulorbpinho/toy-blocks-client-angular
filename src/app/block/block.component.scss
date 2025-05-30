@@ -1,0 +1,27 @@
+.wrapper {
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+.identifier {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #304ffe;
+}
+
+.content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #263238;
+}

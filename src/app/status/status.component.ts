@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./status.component.scss']
 })
 export class StatusComponent {
-  @Input() online: boolean;
+  @Input() available: boolean;
   @Input() loading: boolean;
 }
